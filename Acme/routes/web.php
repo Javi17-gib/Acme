@@ -17,3 +17,7 @@ Route::group(['prefix'=>'dashboard'], function() {
     Route::get("/plano",[PlanoController::class, 'getPlanos'])->name('planos.index');
     Route::post("/plano",[PlanoController::class, 'createPlanos'])->name('planos.store');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
